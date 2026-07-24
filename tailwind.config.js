@@ -6,11 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: "#14213D",
-        paper: "#FAF8F1",
-        accent: "#B3261E",
-        gold: "#C98A2C",
-        slate: "#4A5268",
+        brand: "#4886E3",
+        brandDark: "#2F6BC4",
+        ink: "#333333",
+        paper: "#FFFFFF",
+        soft: "#F5F7FA",
+      },
+      fontFamily: {
+        sans: ["'Source Sans Pro'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
     },
   },
