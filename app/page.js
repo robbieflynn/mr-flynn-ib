@@ -6,11 +6,12 @@ export default function Home() {
 
       {/* Nav */}
       <nav className="flex justify-between items-center px-6 md:px-12 py-4 bg-white sticky top-0 z-50 border-b border-soft">
-        <img src="/images/logo-full.png" alt="Mr. Flynn IB" className="h-10 md:h-12" />
+        <img src="/images/logo-full.png" alt="Mr. Flynn IB" className="h-14 md:h-16" />
         <div className="hidden md:flex gap-8 items-center font-semibold">
           <a href="#courses" className="hover:text-brand">Courses</a>
           <a href="#ia" className="hover:text-brand">IA Guidance</a>
           <a href="#schools" className="hover:text-brand">Schools</a>
+          <a href="#tutoring" className="hover:text-brand">Tutoring</a>
           <a href="#about" className="hover:text-brand">About</a>
           <a href="#free-resource" className="bg-brand text-white px-5 py-2 rounded hover:bg-brandDark transition">
             Free Resource
@@ -22,7 +23,7 @@ export default function Home() {
       <section className="relative">
         <div className="absolute inset-0">
           <img src="/images/hero-banner.png" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/85" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-white/30" />
         </div>
         <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-ink mb-4">
@@ -68,6 +69,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Courses */}
+      <section id="courses" className="py-20 px-6 bg-soft">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black text-ink mb-3 text-center">Choose Your Course</h2>
+          <p className="text-ink/70 text-center mb-12">Full syllabus coverage for every IB Mathematics pathway.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {coursesData.courses.map((course) => (
+              <div key={course.id} className="bg-white border border-soft rounded p-8 hover:shadow-lg transition">
+                <div className="text-xs font-bold text-brand mb-2 uppercase tracking-wide">{course.pathCode}</div>
+                <h3 className="text-xl font-bold text-ink mb-3">{course.name}</h3>
+                <p className="text-ink/70 mb-6">{course.description}</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-2xl font-black text-ink">${course.price}</div>
+                  <a href={course.teachableUrl} className="bg-brand text-white px-6 py-2 rounded font-bold hover:bg-brandDark transition">
+                    Enroll
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Free resource / email capture */}
       <section id="free-resource" className="py-20 px-6 bg-brand text-white">
         <div className="max-w-3xl mx-auto text-center">
@@ -105,29 +129,6 @@ export default function Home() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Courses */}
-      <section id="courses" className="py-20 px-6 bg-soft">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-ink mb-3 text-center">Choose Your Course</h2>
-          <p className="text-ink/70 text-center mb-12">Full syllabus coverage for every IB Mathematics pathway.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {coursesData.courses.map((course) => (
-              <div key={course.id} className="bg-white border border-soft rounded p-8 hover:shadow-lg transition">
-                <div className="text-xs font-bold text-brand mb-2 uppercase tracking-wide">{course.pathCode}</div>
-                <h3 className="text-xl font-bold text-ink mb-3">{course.name}</h3>
-                <p className="text-ink/70 mb-6">{course.description}</p>
-                <div className="flex justify-between items-center">
-                  <div className="text-2xl font-black text-ink">${course.price}</div>
-                  <a href={course.teachableUrl} className="bg-brand text-white px-6 py-2 rounded font-bold hover:bg-brandDark transition">
-                    Enroll on Teachable
-                  </a>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -179,17 +180,50 @@ export default function Home() {
 
       {/* Schools */}
       <section id="schools" className="py-20 px-6 bg-soft">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-ink mb-4">For Schools</h2>
-          <p className="text-lg text-ink/70 mb-8 max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black text-ink mb-4 text-center">For Schools</h2>
+          <p className="text-lg text-ink/70 mb-12 max-w-2xl mx-auto text-center">
             Give your whole cohort access to complete IB Mathematics video courses and examiner-led IA guidance.
             Licensing is tailored to your school's size and needs.
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded p-6 border border-soft">
+              <h4 className="font-bold text-lg mb-2">Full library access</h4>
+              <p className="text-ink/70">Every pathway, every topic, available to your whole cohort for the length of the licence.</p>
+            </div>
+            <div className="bg-white rounded p-6 border border-soft">
+              <h4 className="font-bold text-lg mb-2">Examiner-led IA guidance</h4>
+              <p className="text-ink/70">Students get the same moderator-informed guidance that comes with every individual course.</p>
+            </div>
+            <div className="bg-white rounded p-6 border border-soft">
+              <h4 className="font-bold text-lg mb-2">Flexible terms</h4>
+              <p className="text-ink/70">Pricing and length scale with your cohort size — from a single class to a whole year group.</p>
+            </div>
+          </div>
+          <div className="text-center">
+            <a
+              href="mailto:contact@mrflynnib.com?subject=School%20Licensing%20Enquiry"
+              className="inline-block bg-ink text-white px-8 py-3 rounded font-bold hover:bg-brand transition"
+            >
+              Enquire About School Licensing
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Tutoring */}
+      <section id="tutoring" className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-ink mb-4">1-on-1 Tutoring</h2>
+          <p className="text-lg text-ink/70 mb-8 max-w-2xl mx-auto">
+            For students who want direct, personalised support — working through your specific weak points,
+            reviewing your IA drafts, or preparing for exams with someone who marks them for a living.
+          </p>
           <a
-            href="mailto:contact@mrflynnib.com?subject=School%20Licensing%20Enquiry"
-            className="inline-block bg-ink text-white px-8 py-3 rounded font-bold hover:bg-brand transition"
+            href="mailto:contact@mrflynnib.com?subject=Tutoring%20Enquiry"
+            className="inline-block bg-brand text-white px-8 py-3 rounded font-bold hover:bg-brandDark transition"
           >
-            Enquire About School Licensing
+            Enquire About Tutoring
           </a>
         </div>
       </section>
