@@ -1,0 +1,36 @@
+{
+  "courses": [
+    {
+      "id": "aa-hl",
+      "name": "Applications and Interpretation HL",
+      "pathCode": "AA HL",
+      "description": "Complete IB Mathematics: Applications and Interpretation Higher Level course with video lessons for every topic.",
+      "price": 79,
+      "teachableUrl": "https://mrflynnib.teachable.com/courses/aa-hl"
+    },
+    {
+      "id": "aa-sl",
+      "name": "Applications and Interpretation SL",
+      "pathCode": "AA SL",
+      "description": "Complete IB Mathematics: Applications and Interpretation Standard Level course.",
+      "price": 59,
+      "teachableUrl": "https://mrflynnib.teachable.com/courses/aa-sl"
+    },
+    {
+      "id": "ai-hl",
+      "name": "Analysis and Approaches HL",
+      "pathCode": "AI HL",
+      "description": "Complete IB Mathematics: Analysis and Approaches Higher Level course.",
+      "price": 79,
+      "teachableUrl": "https://mrflynnib.teachable.com/courses/ai-hl"
+    },
+    {
+      "id": "ai-sl",
+      "name": "Analysis and Approaches SL",
+      "pathCode": "AI SL",
+      "description": "Complete IB Mathematics: Analysis and Approaches Standard Level course.",
+      "price": 59,
+      "teachableUrl": "https://mrflynnib.teachable.com/courses/ai-sl"
+    }
+  ]
+}
